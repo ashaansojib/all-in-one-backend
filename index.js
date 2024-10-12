@@ -15,6 +15,7 @@ const ConnectDB = require("./config/db");
 
 // load routes here
 const testing = require("./routes/testing/Test");
+const interviewQuestion = require("./routes/interview/Interview");
 
 // middlewares
 app.use(express.json());
@@ -22,6 +23,9 @@ app.use(cors());
 
 // routes called here
 app.use("/api/all/testing", testing);
+// interview question api section----------
+app.use("/api/all/interview-questions", interviewQuestion);
+app.use("/api/all/interview-questions/:id", interviewQuestion);
 
 // connect db here
 ConnectDB();
